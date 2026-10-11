@@ -36,7 +36,7 @@
     font-family: var(--font-ui);
 }
 .input-wrapper input:user-invalid {
-    border: 2px solid red;
+    border: 2px solid var(--color-maroon);
 }
 .newsletter .newsletter_form button.btn {
     background-color: var(--color-espresso) !important;
