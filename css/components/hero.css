@@ -1,0 +1,46 @@
+.hero {
+    position: relative;
+    background: url('../../assets/img/hero.avif') no-repeat right center/cover;
+    min-height: 100vh;
+    max-height: 1000px;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+}
+.hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+}
+.hero_content {
+    position: relative;
+    z-index: 2;
+    max-width: 557px;
+    margin-left: 0;
+}
+@media (min-width: 1440px) {
+    .hero_content { margin-left: 238px; }
+}
+.eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-lg);
+    letter-spacing: 4px;
+    color: var(--color-white);
+    display: block;
+    margin-bottom: var(--space-40);
+}
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-hero);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: var(--space-56);
+}
+.hero p {
+    font-size: var(--fs-md);
+    color: var(--color-white);
+    margin-bottom: var(--space-56);
+    max-width: 431px;
+}

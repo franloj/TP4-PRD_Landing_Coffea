@@ -1,0 +1,97 @@
+.promo {
+    background-color: var(--color-sand);
+    padding: var(--space-40) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centramos el contenido en móviles */
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .promo {
+        height: 335px;
+        padding: 0;
+        justify-content: flex-start; /* Alineamos a la izquierda en pantallas grandes */
+    }
+}
+
+.promo_bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    z-index: 1;
+}
+
+.promo_bg.left {
+    left: 0;
+    width: 520px;
+    height: 335px;
+    object-fit: cover;
+}
+
+.promo_bg.right {
+    right: 0;
+    width: 503px;
+    height: 335px;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .promo_bg.left, .promo_bg.right {
+        display: block;
+    }
+}
+
+.promo_content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-28);
+    width: 100%;
+    max-width: 372px;
+}
+
+@media (min-width: 1024px) {
+    .promo_content {
+        align-items: flex-start;
+        text-align: left;
+        /* La imagen de la mano mide 520px de ancho. Para que el texto comience a la derecha de la mano (con un pequeño margen), le damos un margen izquierdo un poco mayor al ancho de la imagen. */
+        margin-left: 550px; 
+    }
+}
+
+.promo h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-cta);
+    line-height: 1.25;
+    color: var(--color-espresso);
+    /* Aseguramos que el título no supere el ancho máximo */
+    max-width: 100%;
+}
+
+.promo_content .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--color-espresso);
+    color: var(--color-bg);
+    width: 258px;
+    height: 51px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-base);
+    text-decoration: none;
+}
+
+.chevron-icon {
+    width: 20px;
+    height: 20px;
+}

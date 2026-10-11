@@ -1,0 +1,38 @@
+.carousel-container {
+    position: relative;
+    max-width: 1476px;
+    margin: 0 auto;
+}
+.carousel {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: var(--space-16);
+}
+.carousel::-webkit-scrollbar { display: none; }
+.carousel-arrow {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 71px; height: 71px;
+    display: none;
+    z-index: 2;
+    background-color: var(--color-sand);
+    border-radius: 50%;
+    text-decoration: none;
+}
+.carousel-arrow img {
+    width: 24px;
+    height: auto;
+    object-fit: contain;
+}
+@media (min-width: 1024px) {
+    .carousel-arrow { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+    .carousel-arrow.prev { left: -80px; }
+    .carousel-arrow.next { right: -80px; transform: translateY(-50%) rotate(180deg); }
+}

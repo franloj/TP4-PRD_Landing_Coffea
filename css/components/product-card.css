@@ -1,0 +1,100 @@
+.products {
+    padding: 80px 0;
+    text-align: center;
+}
+.products h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-h2);
+    text-transform: uppercase;
+    letter-spacing: 1.28px;
+    color: var(--color-espresso);
+    margin-bottom: 64px;
+}
+.product-card {
+    flex: 0 0 calc(100% - 2rem);
+    scroll-snap-align: start;
+    background-color: var(--color-sand-20);
+    border: 1.5px solid var(--color-sand);
+    border-radius: var(--radius-card);
+    padding: var(--space-16);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    transition: box-shadow 0.3s;
+}
+@media (min-width: 768px) { .product-card { flex: 0 0 calc(50% - 2rem); } }
+@media (min-width: 1024px) { .product-card { flex: 0 0 366px; } }
+@media (hover: hover) {
+    .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    /* Hacemos zoom solo a la foto del café, no al corazón */
+    .product-card:hover img.product-img { transform: scale(1.03); } 
+}
+.product-card_image-wrapper {
+    position: relative;
+    border-radius: var(--radius-img);
+    overflow: hidden;
+}
+.product-img {
+    width: 100%; height: 364px; object-fit: cover;
+    transition: transform 0.3s;
+}
+.product-card_title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--fs-card-title);
+}
+/* CORRECCIÓN: Medidas exactas que pide el PRD para la descripción */
+.product-card_desc {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-maroon);
+    line-height: 28px;
+}
+.product-card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+.price {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--fs-lg);
+}
+
+/* CORRECCIÓN: Lógica CSS-only para el botón de favoritos */
+.favorite-wrapper {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 33px;
+    height: 33px;
+    z-index: 5;
+}
+.favorite-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.favorite-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.heart-filled {
+    display: none;
+}
+.favorite-checkbox:checked + .favorite-label .heart-empty {
+    display: none;
+}
+.favorite-checkbox:checked + .favorite-label .heart-filled {
+    display: block;
+}
+.favorite-checkbox:focus-visible + .favorite-label {
+    outline: 2px solid var(--color-espresso);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
